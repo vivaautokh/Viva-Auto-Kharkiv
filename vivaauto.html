@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viva Auto</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000; /* Черный фон */
+      color: #fff; /* Белый текст */
+    }
+    header {
+      background:#606060;
+      color: #000000;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    header p {
+      margin:2px 0 0 0;
+      font-size: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .services {
+      margin: 50px 0;
+      text-align: center;
+    }
+    .services h2 {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+      font-size: 22px;
+      line-height: 1.8;
+    }
+    .services li {
+      margin: 15px 0;
+    }
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s ease;
+    }
+    .contacts {
+      background: #606060;
+      color: #000;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #707070;
+      margin-top: 50px;
+    }
+    .contacts h2 {
+      margin-top: 0;
+      font-size: 26px;
+    }
+    .contacts a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .contacts a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      background: #000;
+      color: #888;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="hidden">Viva Auto - Автовикуп 24/7</h1>
+    <p class="hidden">Швидкий викуп автомобілів</p>
+  </header>
+
+  <div class="container">
+    <section class="services hidden">
+      <h2>Наші послуги</h2>
+      <ul>
+        <li class="hidden">🚗 Викуп авто після ДТП</li>
+        <li class="hidden">⚡ Швидкий викуп будь-яких автомобілей</li>
+        <li class="hidden">🌍 Працюємо по Харківській області</li>
+      </ul>
+    </section>
+
+    <section class="contacts hidden">
+      <h2>Контактні дані</h2>
+      <p>Зв'яжіться з нами зараз:</p>
+      <a href="tel:+380996445083">📞 +38 (099) 644-50-83 (Віталій)</a>
+      <a href="viber://chat?number=+380996445083">📲 Viber</a>
+      <a href="https://mail.google.com/viva.auto.kh@gmail.com">📧 viva.auto.kh@gmail.com</a>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 Viva Auto — Всі права захищені.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
