@@ -8,22 +8,22 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #000; /* Черный фон */
-      color: #fff; /* Белый текст */
+      background: #000;
+      color: #fff;
     }
     header {
       background:#606060;
-      color: #000000;
+      color: #000;
       text-align: center;
       padding: 40px 20px;
     }
-    header h1 {
+    header h1, header p {
       margin: 0;
       font-size: 36px;
     }
     header p {
-      margin:2px 0 0 0;
       font-size: 20px;
+      margin-top: 5px;
     }
     .container {
       max-width: 900px;
@@ -46,15 +46,6 @@
     }
     .services li {
       margin: 15px 0;
-    }
-    .hidden {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    .show {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.8s ease;
     }
     .contacts {
       background: #606060;
@@ -92,44 +83,31 @@
 </head>
 <body>
   <header>
-    <h1 class="hidden">Viva Auto - Автовикуп 24/7</h1>
-    <p class="hidden">Швидкий викуп автомобілів</p>
+    <h1>Viva Auto - Автовикуп 24/7</h1>
+    <p>Швидкий викуп автомобілів</p>
   </header>
 
   <div class="container">
-    <section class="services hidden">
+    <section class="services">
       <h2>Наші послуги</h2>
       <ul>
-        <li class="hidden">🚗 Викуп авто після ДТП</li>
-        <li class="hidden">⚡ Швидкий викуп будь-яких автомобілей</li>
-        <li class="hidden">🌍 Працюємо по Харківській області</li>
+        <li>🚗 Викуп авто після ДТП</li>
+        <li>⚡ Швидкий викуп будь-яких автомобілей</li>
+        <li>🌍 Працюємо по Харківській області</li>
       </ul>
     </section>
 
-    <section class="contacts hidden">
+    <section class="contacts">
       <h2>Контактні дані</h2>
       <p>Зв'яжіться з нами зараз:</p>
       <a href="tel:+380996445083">📞 +38 (099) 644-50-83 (Віталій)</a>
       <a href="viber://chat?number=+380996445083">📲 Viber</a>
-      <a href="https://mail.google.com/viva.auto.kh@gmail.com">📧 viva.auto.kh@gmail.com</a>
+      <a href="mailto:viva.auto.kh@gmail.com">📧 viva.auto.kh@gmail.com</a>
     </section>
   </div>
 
   <footer>
     © 2025 Viva Auto — Всі права захищені.
   </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target); 
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
